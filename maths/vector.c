@@ -17,13 +17,28 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#include <stdio.h>
 
-float vector_dot(float *a, float *b, int sz) {
+float vec_dot_product(float *a, float *b, int sz) {
 
 	float sum = 0.0f;
-	for (int i=0;i<sz;i++) {
+	for (unsigned int i=0;i<sz;i++) {
 		sum += (a[i]*b[i]);
 	}
 	return sum;	
 	
+}
+
+void vec_print_col_vec(float *vec, int sz) {
+	for (unsigned int i=0;i<sz;i++) {
+		printf("%d:\t%f\n", i, vec[i]);
+	}
+}
+
+unsigned int vec_equal(float *vec, int sz, float *compare)
+{
+	for (unsigned int i=0;i<sz;i++) {
+		if ( vec[i] != compare[i] ) return 0;
+	}
+	return 1;
 }

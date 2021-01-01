@@ -1,8 +1,11 @@
 
-all: perceptron
+all: unittest c_perceptron.so
 
 clean:
-	rm perceptron *.o
+	rm unittest *.so *.o
 
-perceptron: perceptron.c ../include/maths.h ../maths/vector.c
-	cc $< ../maths/vector.c -o $@ -I../include
+unittest: unittest.c ../include/perceptron.h ./perceptron.c ../include/maths.h ../maths/vector.c
+	gcc $< ./perceptron.c ../maths/vector.c -o $@ -I../include
+
+c_perceptron.so: ../include/perceptron.h ./perceptron.c ../include/maths.h ../maths/vector.c
+	gcc -shared -o $@ ./perceptron.c ../maths/vector.c -I../include

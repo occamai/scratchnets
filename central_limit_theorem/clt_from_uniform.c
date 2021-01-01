@@ -1,8 +1,5 @@
-#ifndef __SCRATCHNETS_MATHS__
-#define __SCRATCHNETS_MATHS__
-
 /*
- * maths.h, declarations for some basic math functions
+ * clt_from_uniform.c, an example program demonstrating the central limit theorem
  * 
  * Copyright (C) 2020 C. George Williams
  *
@@ -20,19 +17,16 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#include <stdio.h>
 
-/*
- * vector math functions
- */
+#include "stats.h"
 
-float vec_dot_product(float *a, float *b, int sz);
-void vec_print_col_vec(float *vec, int sz);
-unsigned int vec_equal(float *vec, int sz, float *compare);
+int main(int argc, char **argv) {
 
-/*
- * matrix math functions
- */
+        printf("Starting %s\n", argv[0]);
 
-void mat_mult_col_vec(float **mat, int rows, int columns, float *vec, float *result);
+        printf("Ending %s\n", argv[0]);
 
-#endif /* __SCRATCHNETS_MATHS__ */
+        return 0;
+}
+

@@ -1,8 +1,5 @@
-#ifndef __SCRATCHNETS_MATHS__
-#define __SCRATCHNETS_MATHS__
-
 /*
- * maths.h, declarations for some basic math functions
+ * matrix.c, definition of functions implementing matrix math
  * 
  * Copyright (C) 2020 C. George Williams
  *
@@ -20,19 +17,16 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#include <stdio.h>
 
-/*
- * vector math functions
- */
+void mat_mult_col_vec(float mat[3][3], int rows, int columns, float *vec, float *result) {
 
-float vec_dot_product(float *a, float *b, int sz);
-void vec_print_col_vec(float *vec, int sz);
-unsigned int vec_equal(float *vec, int sz, float *compare);
-
-/*
- * matrix math functions
- */
-
-void mat_mult_col_vec(float **mat, int rows, int columns, float *vec, float *result);
-
-#endif /* __SCRATCHNETS_MATHS__ */
+	for (int i=0;i<rows;i++) {
+		result[i] = 0.0f;
+		for ( int j=0;j<columns;j++) {
+			printf("%d %d\n", i, j);
+			printf("val=%f\n",mat[i][j] );
+			result[i] += mat[i][j]*vec[j];
+		}
+	}
+}

@@ -1,0 +1,6 @@
+
+use valgrind
+add ifdef'd "run-time hard validation"
+in-lining
+profiling
+

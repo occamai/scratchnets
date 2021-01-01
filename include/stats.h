@@ -1,8 +1,8 @@
-#ifndef __SCRATCHNETS_MATHS__
-#define __SCRATCHNETS_MATHS__
+#ifndef __SCRATCHNETS_STATS__
+#define __SCRATCHNETS_STATS__
 
 /*
- * maths.h, declarations for some basic math functions
+ * stats.h, declarations for some basic stats functions
  * 
  * Copyright (C) 2020 C. George Williams
  *
@@ -22,17 +22,24 @@
 
 
 /*
- * vector math functions
+ * distribution constants
  */
 
-float vec_dot_product(float *a, float *b, int sz);
-void vec_print_col_vec(float *vec, int sz);
-unsigned int vec_equal(float *vec, int sz, float *compare);
+/*TODO: Change to enum*/
+#define STATS_UNIFORM_DISTRIBUTION 0
+#define STATS_NORMAL_DISTRIBUTION 1
 
 /*
- * matrix math functions
+ * random variable
  */
 
-void mat_mult_col_vec(float **mat, int rows, int columns, float *vec, float *result);
+typedef struct 
+{
+  int distribution;
+} RandomVariable;
 
-#endif /* __SCRATCHNETS_MATHS__ */
+RandomVariable rv_make(int type);
+
+int rv_sample( RandomVariable rv );
+
+#endif /* __SCRATCHNETS_STATS__ */

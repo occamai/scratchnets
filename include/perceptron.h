@@ -20,7 +20,24 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+typedef struct {
+    int     n_weights;
+    float   bias;
+    float   *weights;
+} perceptron; 
+
+int perceptron_version();
+
+perceptron* perceptron_init();
+
+//int perceptron_init_from_weights( unsigned long **_p, int n_weights, float bias, float *weights );
+int perceptron_init_from_weights( perceptron **p, int n_weights, float bias, float *weights );
+
+int perceptron_forward( perceptron *p, float *input, float *output );
+
+int perceptron_destroy( perceptron* p );
 
 
+void Foo(unsigned char** ppMem, int* pSize, unsigned long **l);
 
 #endif /* __SCRATCHNETS_PERCEPTRON__ */

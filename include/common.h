@@ -1,8 +1,8 @@
-#ifndef __SCRATCHNETS_MATHS__
-#define __SCRATCHNETS_MATHS__
+#ifndef __SCRATCHNETS_COMMON__
+#define __SCRATCHNETS_COMMON__
 
 /*
- * maths.h, declarations for some basic math functions
+ * common.h, declarations for some basic functions and preprocessor macros
  * 
  * Copyright (C) 2020 C. George Williams
  *
@@ -20,19 +20,6 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#define SCRATCHNETS_DEBUG_LEVEL 1
 
-/*
- * vector math functions
- */
-
-float vec_dot_product(float *a, float *b, int sz);
-void vec_print_col_vec(float *vec, int sz);
-unsigned int vec_equal(float *vec, int sz, float *compare);
-
-/*
- * matrix math functions
- */
-
-void mat_mult_col_vec(float **mat, int rows, int columns, float *vec, float *result);
-
-#endif /* __SCRATCHNETS_MATHS__ */
+#endif /* __SCRATCHNETS_COMMON__ */

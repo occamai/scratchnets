@@ -1,8 +1,5 @@
-#ifndef __SCRATCHNETS_MATHS__
-#define __SCRATCHNETS_MATHS__
-
 /*
- * maths.h, declarations for some basic math functions
+ * compute_graph.c, definition of functions implementing compute_graph functions
  * 
  * Copyright (C) 2020 C. George Williams
  *
@@ -20,19 +17,9 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#include <stdio.h>
 
-/*
- * vector math functions
- */
+void compute_graph_add(cg_node *parent, cg_node *lchild, cg_node *rchild, int *op) {
 
-float vec_dot_product(float *a, float *b, int sz);
-void vec_print_col_vec(float *vec, int sz);
-unsigned int vec_equal(float *vec, int sz, float *compare);
+}
 
-/*
- * matrix math functions
- */
-
-void mat_mult_col_vec(float **mat, int rows, int columns, float *vec, float *result);
-
-#endif /* __SCRATCHNETS_MATHS__ */
