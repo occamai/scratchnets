@@ -53,7 +53,7 @@ int main(int argc, char **argv) {
     assert( err==0 );
 
     /*
-     * vec_file_write
+     * vec_file_read
      */
     float *rvec = vec_file_read("./vec.bin" );
     assert( rvec!=NULL );
