@@ -51,7 +51,7 @@ int main(int argc, char **argv) {
         return -1;
     }
     
-	printf("Ending %s\n", argv[0]);
+	printf("All Tests Passed: Ending %s\n", argv[0]);
     return 0;
 }
 

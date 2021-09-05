@@ -25,14 +25,17 @@
  * vector math functions
  */
 
-float vec_dot_product(float *a, float *b, int sz);
-void vec_print_col_vec(float *vec, int sz);
-unsigned int vec_equal(float *vec, int sz, float *compare);
+float           vec_dot_product(float *a, float *b, int sz);
+void            vec_print_col_vec(float *vec, int sz);
+unsigned int    vec_equal(float *vec, int sz, float *compare);
+
+int             vec_file_write (char *path, float *vec, unsigned int num );
+float           *vec_file_read(char *path);
 
 /*
  * matrix math functions
  */
 
-void mat_mult_col_vec(float **mat, int rows, int columns, float *vec, float *result);
+void            mat_mult_col_vec(float **mat, int rows, int columns, float *vec, float *result);
 
 #endif /* __SCRATCHNETS_MATHS__ */
