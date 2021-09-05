@@ -86,7 +86,7 @@ vec_file_write
     return 0;
 }
 
-float *
+float *         // a malloc pointer is returned
 vec_file_read
 (char *path)
 {
@@ -174,4 +174,6 @@ vec_file_read
 
     return nvec;
 }
+
+
 
