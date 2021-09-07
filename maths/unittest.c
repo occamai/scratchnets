@@ -57,7 +57,7 @@ int main(int argc, char **argv) {
      */
     float *rvec = vec_file_read("./vec.bin" );
     assert( rvec!=NULL );
-	assert( vec_equal( rvec, 3, compare )==1 );
+    assert( vec_equal( rvec, 3, compare )==1 );
 
     printf("Ending %s: All Tests Passed.\n", argv[0]);
 
