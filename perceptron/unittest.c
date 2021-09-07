@@ -52,11 +52,16 @@ int main(int argc, char **argv) {
     float ranbias = (float)float_random(0.0f, 0.1f);
     ret = perceptron_init_from_weights( &p, 3, ranbias, ranweights );
     assert ( ret == 0 );
-   
-    float raninp[3];
-    vec_random(raninp,3,0.0f,0.1f);
-    ret = perceptron_forward( p, raninp, &output );
-    printf("output=%f\n", output);
+
+    // randomize training set
+    float trainvecs[10][3];
+    for (int i=0;i<10;i++) {
+        vec_random( trainvecs[i], 3, 0.0f, 1.0f );
+    
+        ret = perceptron_forward( p, trainvecs[i], &output );
+        assert( ret==0 );
+        printf("output=%f\n", output);
+    }
  
 	printf("All Tests Passed: Ending %s\n", argv[0]);
     return 0;
