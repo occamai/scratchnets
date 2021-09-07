@@ -33,7 +33,7 @@ int main(int argc, char **argv) {
     float b[3] = { 2.0f, 4.0f, 8.0f };
     float dot = vec_dot_product( a, b, 3 );
     printf("Vector dot=%f\n", dot );
-	assert( dot==14.0f );
+    assert( dot==14.0f );
 
     /*
      * mat_mult_col_vec
