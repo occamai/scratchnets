@@ -18,7 +18,7 @@
  */
 
 #include <stdio.h>
-
+#include <assert.h>
 
 #include "maths.h"
 #include "perceptron.h"
@@ -31,26 +31,33 @@ int main(int argc, char **argv) {
 	float weights[3] = { 1.0f, 1.0f, 1.0f };
     int ret = 0;
     perceptron *p = NULL;
-    float output = 0.0f;
     float bias = 1.0f;
 
-    //ret = perceptron_init_from_weights( (unsigned long **)&p, 3, bias, weights );
+    /*
+     * Create perceptron from const weights and bias
+     */
     ret = perceptron_init_from_weights( &p, 3, bias, weights );
-    if ( ret != 0 ) {
-        printf("Could not init perceptron.\n");
-        return -1;
-    }
+    assert ( ret == 0 );
 
+    float output = 0.0f;
     ret = perceptron_forward( p, weights, &output );
-    if ( ret !=0 ) {
-        printf("Perceptron forward failed.\n");
-        return -1;
-    }
-    if ( output != 4.0f ) {
-        printf("Perceptron forward failed - %f\n", output );
-        return -1;
-    }
-    
+    assert ( ret == 0 );
+    assert ( output == 4.0f );
+
+    /*
+     * Create perceptron from random weights and bias
+     */
+    float ranweights[3];
+    vec_random(ranweights,3, 0.0f, 0.1f);
+    float ranbias = (float)float_random(0.0f, 0.1f);
+    ret = perceptron_init_from_weights( &p, 3, ranbias, ranweights );
+    assert ( ret == 0 );
+   
+    float raninp[3];
+    vec_random(raninp,3,0.0f,0.1f);
+    ret = perceptron_forward( p, raninp, &output );
+    printf("output=%f\n", output);
+ 
 	printf("All Tests Passed: Ending %s\n", argv[0]);
     return 0;
 }

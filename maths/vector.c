@@ -20,6 +20,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <float.h>
+#include <inttypes.h>
 
 float
 vec_dot_product
@@ -152,7 +154,7 @@ vec_file_read
             }
             return NULL;
         }
-        printf("Got float %f\n", fval );
+        //printf("Got float %f\n", fval );
 
         void *bcpy = memcpy( (void *)wvec, (const void *)&fval, (size_t)sizeof(float));
         if (bcpy!=wvec) {
@@ -175,5 +177,21 @@ vec_file_read
     return nvec;
 }
 
+float
+float_random(float min, float max)
+{
+    float r = rand();
+    float s = (float)(r/RAND_MAX);
+    float np = (s<0.5)?-1.0f:1.0f;
+    return (float)( ( np * s * ( max - min ) ) + min );
+}
 
-
+int             
+vec_random
+(float *vec, int sz, float min, float max)
+{
+    for (int i=0;i<sz;i++) {
+        vec[i] = float_random(min, max);
+    }
+    return 0;
+}

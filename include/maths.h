@@ -32,6 +32,9 @@ unsigned int    vec_equal(float *vec, int sz, float *compare);
 int             vec_file_write (char *path, float *vec, unsigned int num );
 float           *vec_file_read(char *path);
 
+float           float_random(float min, float max);
+int             vec_random(float *vec, int sz, float min, float max);
+
 /*
  * matrix math functions
  */

@@ -59,6 +59,15 @@ int main(int argc, char **argv) {
     assert( rvec!=NULL );
     assert( vec_equal( rvec, 3, compare )==1 );
 
+    /*
+     * vec_random
+     */
+    float ranvec[3] = { 0.0f, 0.0f, 0.0f };
+    float zeros[3] = { 0.0f, 0.0f, 0.0f };
+    vec_random( ranvec, 3, 0.0f, 0.1f );
+    assert( vec_equal( ranvec, 3, zeros )==0 );
+    vec_print_col_vec( ranvec, 3 );
+    
     printf("Ending %s: All Tests Passed.\n", argv[0]);
 
     return 0;

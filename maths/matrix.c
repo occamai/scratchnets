@@ -24,8 +24,8 @@ void mat_mult_col_vec(float mat[3][3], int rows, int columns, float *vec, float 
 	for (int i=0;i<rows;i++) {
 		result[i] = 0.0f;
 		for ( int j=0;j<columns;j++) {
-			printf("%d %d\n", i, j);
-			printf("val=%f\n",mat[i][j] );
+			//printf("%d %d\n", i, j);
+			//printf("val=%f\n",mat[i][j] );
 			result[i] += mat[i][j]*vec[j];
 		}
 	}
