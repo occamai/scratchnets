@@ -39,12 +39,12 @@ int main(int argc, char **argv) {
      * mat_mult_col_vec
      */	
     float mat[3][3] = {  {1.0f, 0.0f, 0.0f }, {0.0f, 1.0f, 0.0f}, { 0.0f, 0.0f, 1.0f } };
-	float vec[3] = { 2.0f, 3.0f, 4.0f };
-	float result[3] = {0.0f, 0.0f, 0.0f};
-	mat_mult_col_vec( (float **)mat, 3, 3, vec, (float *)result );
-	vec_print_col_vec(result, 3);
-	float compare[3] = { 2.0f, 3.0f, 4.0f };
-	assert( vec_equal( result, 3, compare )==1 );
+    float vec[3] = { 2.0f, 3.0f, 4.0f };
+    float result[3] = {0.0f, 0.0f, 0.0f};
+    mat_mult_col_vec( (float **)mat, 3, 3, vec, (float *)result );
+    vec_print_col_vec(result, 3);
+    float compare[3] = { 2.0f, 3.0f, 4.0f };
+    assert( vec_equal( result, 3, compare )==1 );
 
     /*
      * vec_file_write
