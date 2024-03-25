@@ -1,4 +1,4 @@
 
-mnist: mnist.c
+mnist.exe: mnist.c
 	gcc mnist.c -o $@
 
