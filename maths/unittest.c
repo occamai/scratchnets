@@ -32,8 +32,9 @@ int main(int argc, char **argv) {
     float a[3] = { 1.0f, 1.0f, 1.0f };
     float b[3] = { 2.0f, 4.0f, 8.0f };
     float dot = vec_dot_product( a, b, 3 );
-    printf("Vector dot=%f\n", dot );
+    printf("Vector dot...\n" );
     assert( dot==14.0f );
+    printf("Success.\n");
 
     /*
      * mat_mult_col_vec
@@ -44,29 +45,37 @@ int main(int argc, char **argv) {
     mat_mult_col_vec( (float **)mat, 3, 3, vec, (float *)result );
     vec_print_col_vec(result, 3);
     float compare[3] = { 2.0f, 3.0f, 4.0f };
+    printf("mat_mult_col_vec...\n");
     assert( vec_equal( result, 3, compare )==1 );
+    printf("Success.\n");
 
     /*
      * vec_file_write
      */
+    printf("vec_file_write...\n");
     int err = vec_file_write("./vec.bin", vec, 3 );
     assert( err==0 );
+    printf("Success.\n");
 
     /*
      * vec_file_read
      */
+    printf("vec_file_read...\n");
     float *rvec = vec_file_read("./vec.bin" );
     assert( rvec!=NULL );
     assert( vec_equal( rvec, 3, compare )==1 );
+    printf("Success.\n");
 
     /*
      * vec_random
      */
     float ranvec[3] = { 0.0f, 0.0f, 0.0f };
     float zeros[3] = { 0.0f, 0.0f, 0.0f };
+    printf("vec_random...\n");
     vec_random( ranvec, 3, 0.0f, 0.1f );
     assert( vec_equal( ranvec, 3, zeros )==0 );
     vec_print_col_vec( ranvec, 3 );
+    printf("Success.\n");
     
     printf("Ending %s: All Tests Passed.\n", argv[0]);
 
