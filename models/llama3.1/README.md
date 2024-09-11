@@ -11,4 +11,4 @@ TODO:
 * integrate various RAG techniques
 * implement LORA adapter fine-tuning
 * revert to using HF safe tensors (instead of the custom HF export)
-
+* unit tests (like trivial inputs)
