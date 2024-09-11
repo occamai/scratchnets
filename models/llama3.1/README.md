@@ -1,6 +1,7 @@
 
 
 TODO:
+* yikes having trouble reproducing the exact "pirate" output...fix this!
 * clean up print statements in notebooks
 * implement sampling of softmax probabilites instead of argmax (like what transformer library does)
 * figure out the pytorch vs HF weights mismatch (it seems to also be affecting the output quality)
