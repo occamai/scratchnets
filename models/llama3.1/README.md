@@ -13,3 +13,5 @@ TODO:
 * implement LORA adapter fine-tuning
 * revert to using HF safe tensors (instead of the custom HF export)
 * unit tests (like trivial inputs)
+* implement HFQuantizer (notice BitNet is being introduced!)
+
